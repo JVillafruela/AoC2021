@@ -28,10 +28,7 @@ func part2(filename string) {
 	ints := utils.ReadInts(filename)
 
 	increase := 0
-	for i := range ints {
-		if i < 3 {
-			continue
-		}
+	for i := 3; i < len(ints); i++ {
 		if window(ints, i) > window(ints, i-1) {
 			increase++
 		}
